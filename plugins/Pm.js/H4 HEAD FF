@@ -1,0 +1,29 @@
+H4 HEAD FF = require('../Utilis/events')
+const {MessageType, GroupSettingChange, Mimetype, MessageOptions} = require('@adiwajshing/baileys')
+const { getBuffer } = require('../Utilis/download')
+//Owner vcard by H4 HEAD FF❤️
+Mask.addCommand( //by h4 head...
+  { pattern: "pm ?(.*)", fromMe: true, desc: "send owner vcard" },
+async (message, match) => {
+const vcard = 'https://i.imgur.com/27KfzJJ.jpeg'
+const walker = 'BEGIN:VCARD\n'
+            + 'VERSION:3.0\n' 
+            + 'FN:' + 'H4 HEAD FF' + '\n' //dont copy without credits ⚠️
+            + 'ORG:userbot;\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=' + '919544951258' + ':' + '919544951258' + ' \n'
+            + 'END:VCARD'
+const buff = await getBuffer(vcard)
+await message.client.sendMessage(message.jid, {displayname: "H4 HEAD FF 💓", vcard: walker}, MessageType.contact,{quoted : {
+  key: {
+        fromMe: false,
+        participant: "0@s.whatsapp.net",
+        remoteJid: "status@broadcast"
+      }, //Vcard sender by H4 HEAD FF
+      message: {
+        "imageMessage": {
+          "jpegThumbnail": buff.buffer,
+          "caption": "H4 HEAD FF💖"
+        }
+      }
+   }}) //owner vcard sender
+}); //Coded by MASK SER
